@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationSearch.Service", "L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationSearch.Common", "LocationSearch.Common\LocationSearch.Common.csproj", "{FC6B7E86-2F1B-4356-A67B-9E23331FA56A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationSearch.Test", "LocationSearch.Test\LocationSearch.Test.csproj", "{26D89FAE-6E08-4580-B00B-B75382EF7252}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{FC6B7E86-2F1B-4356-A67B-9E23331FA56A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC6B7E86-2F1B-4356-A67B-9E23331FA56A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC6B7E86-2F1B-4356-A67B-9E23331FA56A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26D89FAE-6E08-4580-B00B-B75382EF7252}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26D89FAE-6E08-4580-B00B-B75382EF7252}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26D89FAE-6E08-4580-B00B-B75382EF7252}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26D89FAE-6E08-4580-B00B-B75382EF7252}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -25,9 +25,6 @@ namespace LocationSearch.Common.Helper
 
             return dist * 1609.344;
         }
-        public static bool InRadius(double latitude, double longitude, double maxDistance, Location x)
-        {
-            return (Math.Pow(x.Latitude - latitude, 2) + Math.Pow(x.Longitude - longitude, 2)) <= Math.Pow(LocationHelper.ConvertDistanceToDegres(maxDistance), 2);
-        }
+        
     }
 }

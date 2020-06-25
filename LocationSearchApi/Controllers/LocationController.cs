@@ -26,15 +26,16 @@ namespace LocationSearchApi.Controllers
             _logger = logger;
         }
         [HttpGet]
+        [Route("search")]
         public IActionResult GetLocation(double latitude, double longitude, double maxDistance, int maxResults)
         {
             try
             {
                 var getValidLocations = _locationRepository
-                    .Find(x => LocationHelper.InRadius(latitude, longitude, maxDistance, x))
+                    .Find(x => (Math.Pow(x.Latitude - latitude, 2) + Math.Pow(x.Longitude - longitude, 2)) <= Math.Pow(LocationHelper.ConvertDistanceToDegres(maxDistance), 2))
                     .Select(x => new SearchResult {
                         Address = x.Address,
-                        Distance = LocationHelper.CalculateDistance(x, new Location { Latitude = latitude, Longitude = longitude }) 
+                        Distance = LocationHelper.CalculateDistance(x, new Location { Latitude = latitude, Longitude = longitude })
                     })
                     .OrderBy(x => x.Distance)
                     .Take(maxResults)
@@ -48,9 +49,15 @@ namespace LocationSearchApi.Controllers
                 _logger.LogError(ex.Message);
                 return StatusCode(500);
             }
-            
-        }
 
+        }
+        [HttpGet]
+        public IActionResult GetTestLocation() {
+
+            var location = _locationRepository.GetAll().Take(10).ToList();
+
+           return Ok(location);
+        }
        
 
         [HttpPost]
